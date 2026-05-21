@@ -1,0 +1,498 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .page-card { @apply rounded-md border border-[#29314b] bg-[#1F2A40] p-5 text-[#e0e0e0] shadow-xl shadow-black/10; }
+  .stat-card { @apply rounded-md border border-[#29314b] bg-[#1F2A40] p-5 text-[#e0e0e0] shadow-xl shadow-black/10 transition hover:border-[#6870fa]/50; }
+  .btn-primary { @apply inline-flex items-center rounded-md bg-[#6870fa] px-4 py-2 text-sm font-bold text-white shadow-lg shadow-[#6870fa]/20 transition hover:bg-[#535ac8]; }
+  .btn-light { @apply inline-flex items-center rounded-md border border-[#29314b] bg-[#1F2A40] px-4 py-2 text-sm font-semibold text-[#e0e0e0] transition hover:border-[#6870fa] hover:text-[#868dfb]; }
+  .input { @apply w-full rounded-md border-[#29314b] bg-[#141b2d] text-sm text-[#e0e0e0] shadow-sm placeholder:text-[#858585] focus:border-[#6870fa] focus:ring-[#6870fa]; }
+  .badge { @apply inline-flex rounded-md px-2.5 py-1 text-xs font-bold; }
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  background: #141b2d;
+  font-family: "Source Sans Pro", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.siprakar-admin-theme table {
+  width: 100%;
+}
+
+.siprakar-admin-theme thead tr {
+  border-color: #29314b !important;
+  color: #a3a3a3 !important;
+}
+
+.siprakar-admin-theme tbody tr {
+  border-color: #29314b !important;
+  color: #e0e0e0;
+}
+
+.siprakar-admin-theme tbody tr:hover {
+  background: rgba(104, 112, 250, 0.08);
+}
+
+.siprakar-admin-theme .text-slate-500,
+.siprakar-admin-theme .text-gray-500,
+.siprakar-admin-theme .text-gray-600 {
+  color: #a3a3a3 !important;
+}
+
+.siprakar-admin-theme .text-slate-600,
+.siprakar-admin-theme .text-gray-700,
+.siprakar-admin-theme .text-gray-800,
+.siprakar-admin-theme .text-gray-900,
+.siprakar-admin-theme .text-slate-700,
+.siprakar-admin-theme .text-slate-900 {
+  color: #e0e0e0 !important;
+}
+
+.siprakar-admin-theme .text-sky-950 {
+  color: #4cceac !important;
+}
+
+.siprakar-admin-theme .bg-sky-950 {
+  background-color: #4cceac !important;
+}
+
+.siprakar-admin-theme .bg-slate-100,
+.siprakar-admin-theme .bg-gray-100 {
+  background-color: #29314b !important;
+}
+
+.siprakar-admin-theme .border-slate-100,
+.siprakar-admin-theme .border-slate-200,
+.siprakar-admin-theme .border-gray-100,
+.siprakar-admin-theme .border-gray-200,
+.siprakar-admin-theme .border-b {
+  border-color: #29314b !important;
+}
+
+.siprakar-admin-theme .fill-slate-400 {
+  fill: #a3a3a3 !important;
+}
+
+.siprakar-admin-theme label {
+  color: #e0e0e0;
+}
+
+.siprakar-admin-theme select,
+.siprakar-admin-theme input,
+.siprakar-admin-theme textarea {
+  color-scheme: dark;
+}
+
+.siprakar-auth-theme .text-gray-500,
+.siprakar-auth-theme .text-gray-600,
+.siprakar-auth-theme .text-gray-700,
+.siprakar-auth-theme .text-gray-800,
+.siprakar-auth-theme .text-gray-900 {
+  color: #c2c2c2 !important;
+}
+
+.siprakar-auth-theme a {
+  color: #4cceac;
+}
+
+@layer components {
+  .table-shell { @apply overflow-x-auto rounded-2xl border border-[#29314b]; -webkit-overflow-scrolling: touch; }
+  .data-table { @apply w-full table-fixed text-sm; min-width: 980px; }
+  .data-table thead tr { @apply border-b border-[#29314b] bg-[#141b2d] text-left text-xs font-black uppercase tracking-wide text-[#a3a3a3]; }
+  .data-table th { @apply px-4 py-3 align-middle whitespace-nowrap; }
+  .data-table td { @apply border-b border-[#29314b] px-4 py-3 align-middle; min-width: 0; max-width: 26rem; overflow-wrap: normal; word-break: normal; }
+  .data-table tbody tr:last-child td { @apply border-b-0; }
+  .table-nowrap { @apply whitespace-nowrap; }
+  .table-actions { @apply inline-flex flex-nowrap items-center justify-end gap-2 whitespace-nowrap; }
+  .progress-cell { @apply flex min-w-[132px] items-center gap-2 whitespace-nowrap; }
+  .progress-bar { @apply h-2 w-24 shrink-0 rounded-full bg-[#29314b]; }
+  .progress-value { @apply shrink-0 text-xs font-bold; }
+  .icon-btn { @apply inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#29314b] text-[#4cceac] transition hover:border-[#6870fa] hover:bg-[#6870fa]/10 hover:text-[#868dfb]; }
+  .icon-btn-danger { @apply inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-red-500/30 text-red-300 transition hover:bg-red-500/10; }
+}
+
+@media (max-width: 767px) {
+  .table-shell { overflow-x: auto !important; overflow-y: hidden !important; }
+  .data-table { min-width: 1040px; }
+  .data-table thead { display: table-header-group !important; }
+  .data-table tbody { display: table-row-group !important; }
+  .data-table tr { display: table-row !important; }
+  .data-table th,
+  .data-table td { display: table-cell !important; white-space: normal; }
+}
+
+.line-clamp-1 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+.line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+/* Light mode for dashboard comfort. The layout still uses the same component classes,
+   these overrides keep the UI readable without rewriting every page component. */
+.siprakar-admin-theme.light-mode {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.siprakar-admin-theme.light-mode .bg-\[\#141b2d\],
+.siprakar-admin-theme.light-mode .bg-\[\#141b2d\]\/95 {
+  background-color: #f8fafc !important;
+}
+
+.siprakar-admin-theme.light-mode .bg-\[\#1F2A40\] {
+  background-color: #ffffff !important;
+}
+
+.siprakar-admin-theme.light-mode .bg-\[\#29314b\] {
+  background-color: #e2e8f0 !important;
+}
+
+.siprakar-admin-theme.light-mode .border-\[\#29314b\],
+.siprakar-admin-theme.light-mode .border-white\/10,
+.siprakar-admin-theme.light-mode .border-b {
+  border-color: #e2e8f0 !important;
+}
+
+.siprakar-admin-theme.light-mode .text-\[\#e0e0e0\],
+.siprakar-admin-theme.light-mode .text-white,
+.siprakar-admin-theme.light-mode .text-slate-700,
+.siprakar-admin-theme.light-mode .text-slate-900,
+.siprakar-admin-theme.light-mode .text-gray-700,
+.siprakar-admin-theme.light-mode .text-gray-800,
+.siprakar-admin-theme.light-mode .text-gray-900 {
+  color: #0f172a !important;
+}
+
+.siprakar-admin-theme.light-mode .text-\[\#a3a3a3\],
+.siprakar-admin-theme.light-mode .text-\[\#858585\],
+.siprakar-admin-theme.light-mode .text-slate-500,
+.siprakar-admin-theme.light-mode .text-gray-500,
+.siprakar-admin-theme.light-mode .text-gray-600 {
+  color: #64748b !important;
+}
+
+.siprakar-admin-theme.light-mode .placeholder\:text-\[\#858585\]::placeholder {
+  color: #94a3b8 !important;
+}
+
+.siprakar-admin-theme.light-mode input,
+.siprakar-admin-theme.light-mode select,
+.siprakar-admin-theme.light-mode textarea {
+  color-scheme: light;
+}
+
+.siprakar-admin-theme.light-mode .input {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.siprakar-admin-theme.light-mode .page-card,
+.siprakar-admin-theme.light-mode .stat-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08) !important;
+}
+
+.siprakar-admin-theme.light-mode .data-table thead tr {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #475569 !important;
+}
+
+.siprakar-admin-theme.light-mode .data-table td,
+.siprakar-admin-theme.light-mode .data-table th,
+.siprakar-admin-theme.light-mode tbody tr,
+.siprakar-admin-theme.light-mode thead tr {
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+.siprakar-admin-theme.light-mode tbody tr:hover {
+  background: rgba(104, 112, 250, 0.08) !important;
+}
+
+.siprakar-admin-theme.light-mode .hover\:bg-\[\#141b2d\]:hover,
+.siprakar-admin-theme.light-mode .hover\:bg-white\/10:hover {
+  background-color: #f1f5f9 !important;
+}
+
+.siprakar-admin-theme.light-mode .icon-btn {
+  border-color: #cbd5e1 !important;
+  background-color: #ffffff !important;
+}
+
+.siprakar-admin-theme.light-mode .shadow-2xl,
+.siprakar-admin-theme.light-mode .shadow-xl {
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.10) !important;
+}
+
+
+/* Stronger light-mode readability for add/edit forms, modals, inputs, and table tools. */
+.siprakar-admin-theme.light-mode label,
+.siprakar-admin-theme.light-mode form,
+.siprakar-admin-theme.light-mode .page-card,
+.siprakar-admin-theme.light-mode .stat-card {
+  color: #0f172a !important;
+}
+
+.siprakar-admin-theme.light-mode input:not([type="checkbox"]),
+.siprakar-admin-theme.light-mode select,
+.siprakar-admin-theme.light-mode textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.siprakar-admin-theme.light-mode input[type="checkbox"] {
+  accent-color: #6870fa;
+}
+
+.siprakar-admin-theme.light-mode input::placeholder,
+.siprakar-admin-theme.light-mode textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.siprakar-admin-theme.light-mode select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.siprakar-admin-theme.light-mode .btn-light {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.siprakar-admin-theme.light-mode .btn-light:hover {
+  background-color: #f1f5f9 !important;
+  color: #4f46e5 !important;
+}
+
+.siprakar-admin-theme.light-mode .table-shell {
+  border-color: #e2e8f0 !important;
+}
+
+.siprakar-admin-theme.light-mode .progress-bar,
+.siprakar-admin-theme.light-mode .data-table .bg-\[\#29314b\] {
+  background-color: #e2e8f0 !important;
+}
+
+.siprakar-admin-theme.light-mode .text-red-200,
+.siprakar-admin-theme.light-mode .text-red-300 {
+  color: #b91c1c !important;
+}
+
+.siprakar-admin-theme.light-mode .text-amber-300 {
+  color: #b45309 !important;
+}
+
+.siprakar-admin-theme.light-mode .text-emerald-300 {
+  color: #047857 !important;
+}
+
+/* Membuat tampilan default terasa lebih luas seperti browser zoom 90%,
+   tetapi tetap kembali normal pada layar kecil agar nyaman disentuh. */
+.siprakar-admin-theme {
+  font-size: 0.94rem;
+}
+
+.app-content {
+  width: 100%;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .siprakar-admin-theme {
+    font-size: 1rem;
+  }
+}
+
+/* Revisi presisi tabel: semua header dan data tabel rata kiri. */
+.data-table th,
+.data-table td,
+.data-table th.text-center,
+.data-table td.text-center,
+.data-table th.text-right,
+.data-table td.text-right,
+.data-table .text-center,
+.data-table .text-right {
+  text-align: left !important;
+}
+
+.table-actions {
+  justify-content: flex-start !important;
+}
+
+.table-currency {
+  font-size: 0.82rem;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+/* Revisi 2026-05-21: palet light mode lebih lembut dan kontras. */
+.siprakar-admin-theme.light-mode {
+  background: #f5f7fb !important;
+  color: #1e293b !important;
+}
+
+.siprakar-admin-theme.light-mode main,
+.siprakar-admin-theme.light-mode header,
+.siprakar-admin-theme.light-mode .app-content {
+  background-color: #f5f7fb !important;
+}
+
+.siprakar-admin-theme.light-mode header {
+  border-color: #dbe4f0 !important;
+  box-shadow: 0 10px 24px rgba(30, 41, 59, 0.06) !important;
+}
+
+.siprakar-admin-theme.light-mode h1,
+.siprakar-admin-theme.light-mode h2,
+.siprakar-admin-theme.light-mode h3,
+.siprakar-admin-theme.light-mode b,
+.siprakar-admin-theme.light-mode strong,
+.siprakar-admin-theme.light-mode .text-\[\#e0e0e0\] {
+  color: #172033 !important;
+}
+
+.siprakar-admin-theme.light-mode .page-card,
+.siprakar-admin-theme.light-mode .stat-card {
+  background-color: #ffffff !important;
+  border-color: #dbe4f0 !important;
+  color: #1e293b !important;
+  box-shadow: 0 18px 40px rgba(30, 41, 59, 0.08) !important;
+}
+
+.siprakar-admin-theme.light-mode .input,
+.siprakar-admin-theme.light-mode input:not([type="checkbox"]),
+.siprakar-admin-theme.light-mode select,
+.siprakar-admin-theme.light-mode textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #172033 !important;
+}
+
+.siprakar-admin-theme.light-mode .input:focus,
+.siprakar-admin-theme.light-mode input:focus,
+.siprakar-admin-theme.light-mode select:focus,
+.siprakar-admin-theme.light-mode textarea:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16) !important;
+}
+
+.siprakar-admin-theme.light-mode .btn-primary {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.18) !important;
+}
+
+.siprakar-admin-theme.light-mode .btn-light,
+.siprakar-admin-theme.light-mode .icon-btn {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #2563eb !important;
+}
+
+.siprakar-admin-theme.light-mode .btn-light:hover,
+.siprakar-admin-theme.light-mode .icon-btn:hover {
+  background-color: #eef5ff !important;
+  border-color: #93c5fd !important;
+  color: #1d4ed8 !important;
+}
+
+.siprakar-admin-theme.light-mode .table-shell {
+  border-color: #dbe4f0 !important;
+  background-color: #ffffff !important;
+}
+
+.siprakar-admin-theme.light-mode .data-table thead tr {
+  background-color: #edf3fb !important;
+  color: #475569 !important;
+}
+
+.siprakar-admin-theme.light-mode .data-table th,
+.siprakar-admin-theme.light-mode .data-table td {
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+.siprakar-admin-theme.light-mode .data-table tbody tr:hover {
+  background-color: #f6f9fd !important;
+}
+
+.siprakar-admin-theme.light-mode .progress-bar,
+.siprakar-admin-theme.light-mode .bg-\[\#29314b\] {
+  background-color: #dbe4f0 !important;
+}
+
+.siprakar-admin-theme.light-mode .bg-\[\#1F2A40\] {
+  background-color: #ffffff !important;
+}
+
+.siprakar-admin-theme.light-mode .text-\[\#4cceac\],
+.siprakar-admin-theme.light-mode .text-sky-950 {
+  color: #2563eb !important;
+}
+
+.siprakar-admin-theme.light-mode .bg-\[\#4cceac\],
+.siprakar-admin-theme.light-mode .bg-sky-950 {
+  background-color: #2563eb !important;
+}
+
+.siprakar-admin-theme.light-mode .text-emerald-300 { color: #047857 !important; }
+.siprakar-admin-theme.light-mode .text-sky-300 { color: #0369a1 !important; }
+.siprakar-admin-theme.light-mode .text-indigo-300 { color: #4f46e5 !important; }
+.siprakar-admin-theme.light-mode .text-amber-300 { color: #b45309 !important; }
+.siprakar-admin-theme.light-mode .text-red-300 { color: #b91c1c !important; }
+.siprakar-admin-theme.light-mode .text-slate-300 { color: #475569 !important; }
+
+.siprakar-admin-theme.light-mode .bg-emerald-500\/15 { background-color: rgba(16, 185, 129, 0.13) !important; }
+.siprakar-admin-theme.light-mode .bg-sky-500\/15 { background-color: rgba(14, 165, 233, 0.13) !important; }
+.siprakar-admin-theme.light-mode .bg-indigo-500\/15 { background-color: rgba(99, 102, 241, 0.13) !important; }
+.siprakar-admin-theme.light-mode .bg-amber-500\/15 { background-color: rgba(245, 158, 11, 0.16) !important; }
+.siprakar-admin-theme.light-mode .bg-red-500\/15 { background-color: rgba(239, 68, 68, 0.13) !important; }
+.siprakar-admin-theme.light-mode .bg-slate-500\/15 { background-color: rgba(100, 116, 139, 0.13) !important; }
+
+@media (max-width: 640px) {
+  .page-card,
+  .stat-card {
+    padding: 1rem !important;
+  }
+
+  .app-content {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .dashboard-chart svg {
+    min-width: 0 !important;
+  }
+}
